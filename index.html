@@ -22,8 +22,9 @@ h2{font-family:"Press Start 2P";font-size:13px;color:#00aaaa;margin-top:0}
 .shop-layout{display:grid;grid-template-columns:220px 1fr 320px;gap:20px}
 .category{cursor:pointer;padding:10px;border-bottom:1px solid #2a344a}
 .category:hover{background:#1b2230}
-.item{background:#1b2230;border:1px solid #2a344a;border-radius:6px;padding:10px;text-align:center}
+.item{background:#1b2230;border:1px solid #2a344a;border-radius:6px;padding:10px;text-align:center;width:54px;height:54px;display:flex;flex-direction:column;justify-content:center;align-items:center}
 .item button{background:#55ff55;border:none;border-radius:4px;padding:6px;font-weight:bold;cursor:pointer}
+#referral{padding:12px}
 .cart-item{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
 select,input,textarea,button{width:100%;background:#0d1118;color:#e6e6e6;border:1px solid #2a344a;border-radius:4px;padding:8px}
 button.export{background:#00aaaa;color:#000;font-weight:bold;margin-top:10px}
@@ -37,7 +38,7 @@ button.export{background:#00aaaa;color:#000;font-weight:bold;margin-top:10px}
 <header>
 <h1>NetherB0T</h1>
 <nav>
-<a onclick="showPage('index')">Index</a>
+<a onclick="showPage('index')">Main Page</a>
 <a onclick="showPage('commands')">Commands</a>
 <a onclick="showPage('shop')">Shop</a>
 <a href="https://discord.gg/Jn47s2MsXH" target="_blank">Discord</a>
@@ -47,7 +48,7 @@ button.export{background:#00aaaa;color:#000;font-weight:bold;margin-top:10px}
 <div id="index" class="page active">
 <div class="panel">
 <h2>Index</h2>
-<p><strong>NetherB0T</strong> is a multi-server Minecraft bot and shop system.</p>
+<p><strong>NetherB0T</strong> is a multi-server anarchy bot and shop system.</p>
 
 <p><strong>Supported servers:</strong></p>
 <ul>
@@ -58,11 +59,11 @@ button.export{background:#00aaaa;color:#000;font-weight:bold;margin-top:10px}
   <li>QuiltAnarchy</li>
 </ul>
 
-<p>Orders are created here, pasted into a Discord ticket, and then fulfilled in-game.</p>
+<p>Orders are created here, pasted into a Discord ticket, and then done in game. (each kit purchased is a double chest worth, so 1 kit for 2$ is 54 kits)</p>
 
 <p>
 After delivery, use <b>*kit</b> in-game (on any supported server) to receive your kits.
-<b>Do not disconnect</b>, as the bot will continue automatically teleporting to you until all kits are fully delivered using <b>/tpa</b>.
+<b>Do not leave ingame</b>, as the bot will continue automatically teleporting to you until all kits are fully delivered using <b>/tpa</b>.
 </p>
 
 <p><strong>How it works:</strong></p>
@@ -215,58 +216,59 @@ document.getElementById("commandInfo").innerText="*"+cmd+" — "+commandDesc[cmd
 
 const categories = {
   pvp: [
-    {name:"Netherite Swords", image:"images/nswords.png", price:2.50},
-    {name:"Diamond Swords", image:"images/dswords.png", price:2.20},
-    {name:"Netherite Axes", image:"images/naxes.png", price:2.30},
-    {name:"Diamond Axes", image:"images/daxes.png", price:2.10},
-    {name:"XP", image:"images/xp.png", price:1.80},
-    {name:"Gapples Kit", image:"images/gaps.png", price:1.20},
-    {name:"Fishing Rods", image:"images/fishingrods.png", price:1.50},
-    {name:"Bows", image:"images/bows.png", price:1.75},
-    {name:"Pearls", image:"images/pearls.png", price:1.60},
-    {name:"PvP Kit 1", image:"images/pvp1.png", price:1.90},
-    {name:"PvP Kit 2", image:"images/pvp2.png", price:2.00},
-    {name:"PvP Kit 3", image:"images/pvp3.png", price:2.10}
+    {name:"54x Shulkers Netherite Swords", image:"images/nswords.png", price:2.50},
+    {name:"54x Shulkers Diamond Swords", image:"images/dswords.png", price:2.20},
+    {name:"54x Shulkers Netherite Axes", image:"images/naxes.png", price:2.30},
+    {name:"54x Shulkers Diamond Axes", image:"images/daxes.png", price:2.10},
+    {name:"54x Shulkers XP", image:"images/xp.png", price:1.80},
+    {name:"54x Shulkers Gapples Kit", image:"images/gaps.png", price:1.20},
+    {name:"54x Shulkers Fishing Rods", image:"images/fishingrods.png", price:1.50},
+    {name:"54x Shulkers Bows", image:"images/bows.png", price:1.75},
+    {name:"54x Shulkers Pearls", image:"images/pearls.png", price:1.60},
+    {name:"54x Shulkers PvP Kit 1", image:"images/pvp1.png", price:1.90},
+    {name:"54x Shulkers PvP Kit 2", image:"images/pvp2.png", price:2.00},
+    {name:"54x Shulkers PvP Kit 3", image:"images/pvp3.png", price:2.10}
   ],
   illegal: [
-    {name:"Illegal Items", image:"images/illegal1.png", price:2.75},
-    {name:"Music Discs", image:"images/discs.png", price:2.10},
-    {name:"Armor Trims", image:"images/trims.png", price:1.50},
-    {name:"Shears", image:"images/shears.png", price:1.30}
+    {name:"54x Shulkers Illegal Items", image:"images/illegal1.png", price:2.75},
+    {name:"54x Shulkers Music Discs", image:"images/discs.png", price:2.10},
+    {name:"54x Shulkers Armor Trims", image:"images/trims.png", price:1.50},
+    {name:"54x Shulkers Shears", image:"images/shears.png", price:1.30}
   ],
   grief: [
-    {name:"Wither Skulls", image:"images/witherskulls.png", price:2.30},
-    {name:"Flint N Steels Kit", image:"images/flintnsteel.png", price:1.95},
-    {name:"TNT Grief Kit", image:"images/tnt.png", price:2.00},
-    {name:"Diamond Grief Kit", image:"images/dgrief.png", price:2.40}
+    {name:"54x Shulkers Wither Skulls", image:"images/witherskulls.png", price:2.30},
+    {name:"54x Shulkers Flint N Steels Kit", image:"images/flintnsteel.png", price:1.95},
+    {name:"54x Shulkers TNT Grief Kit", image:"images/tnt.png", price:2.00},
+    {name:"54x Shulkers Diamond Grief Kit", image:"images/dgrief.png", price:2.40}
   ],
   blocks: [
-    {name:"Obsidian", image:"images/obsidan.png", price:1.10},
-    {name:"Ender Chests", image:"images/echests.png", price:2.00}
+    {name:"54x Shulkers Obsidian", image:"images/obsidan.png", price:1.10},
+    {name:"54x Shulkers Ender Chests", image:"images/echests.png", price:2.00}
   ],
   tools: [
-    {name:"Netherite Helmets", image:"images/nhelmets.png", price:2.50},
-    {name:"Diamond Helmets", image:"images/dhelmets.png", price:2.20},
-    {name:"Netherite Chestplates", image:"images/nchestplates.png", price:2.90},
-    {name:"Diamond Chestplates", image:"images/dchestplates.png", price:2.70},
-    {name:"Netherite Leggings", image:"images/npants.png", price:2.60},
-    {name:"Diamond Leggings", image:"images/dpants.png", price:2.40},
-    {name:"Netherite Boots", image:"images/nboots.png", price:2.50},
-    {name:"Diamond Boots", image:"images/dboots.png", price:2.30},
-    {name:"Netherite Pickaxes", image:"images/npickaxes.png", price:2.40},
-    {name:"Diamond Pickaxes", image:"images/dpickaxes.png", price:2.20},
-    {name:"Netherite Shovels", image:"images/nshovels.png", price:2.10}
+    {name:"54x Shulkers Netherite Helmets", image:"images/nhelmets.png", price:2.50},
+    {name:"54x Shulkers Diamond Helmets", image:"images/dhelmets.png", price:2.20},
+    {name:"54x Shulkers Netherite Chestplates", image:"images/nchestplates.png", price:2.90},
+    {name:"54x Shulkers Diamond Chestplates", image:"images/dchestplates.png", price:2.70},
+    {name:"54x Shulkers Netherite Leggings", image:"images/npants.png", price:2.60},
+    {name:"54x Shulkers Diamond Leggings", image:"images/dpants.png", price:2.40},
+    {name:"54x Shulkers Netherite Boots", image:"images/nboots.png", price:2.50},
+    {name:"54x Shulkers Diamond Boots", image:"images/dboots.png", price:2.30},
+    {name:"54x Shulkers Netherite Pickaxes", image:"images/npickaxes.png", price:2.40},
+    {name:"54x Shulkers Diamond Pickaxes", image:"images/dpickaxes.png", price:2.20},
+    {name:"54x Shulkers Netherite Shovels", image:"images/nshovels.png", price:2.10}
   ],
   consumables: [
-    {name:"Enchanted Apples", image:"images/gaps.png", price:2.10},
-    {name:"Experience Bottles", image:"images/xp.png", price:1.00}
+    {name:"54x Shulkers Enchanted Apples", image:"images/gaps.png", price:2.10},
+    {name:"54x Shulkers Experience Bottles", image:"images/xp.png", price:1.00}
   ],
   misc: [
-    {name:"Random Items", image:"images/misc.png", price:1.75},
-    {name:"Elytras", image:"images/elytras.png", price:2.50},
-    {name:"Totems", image:"images/totems.png", price:2.20}
+    {name:"54x Shulkers Random Items", image:"images/misc.png", price:1.75},
+    {name:"54x Shulkers Elytras", image:"images/elytras.png", price:2.50},
+    {name:"54x Shulkers Totems", image:"images/totems.png", price:2.20}
   ]
 }
+
 
 
 const cryptoFees={
