@@ -489,41 +489,68 @@ function showCmd(cmd){
 }
 
 // ── SHOP DATA ──
-const CAT_ICONS={pvp:'⚔️',illegal:'🚫',grief:'💥',blocks:'🧱',tools:'🛡️',consumables:'🍎',misc:'📦'};
+const CAT_ICONS = {
+  pvp: '⚔',
+  illegal: '⛒',
+  grief: '✹',
+  blocks: '▧',
+  tools: '⛏',
+  consumables: '◉',
+  misc: '◈'
+};
+
 const categories={
   pvp:[
-    {name:"Netherite Swords",icon:"🗡️",price:2.50},{name:"Diamond Swords",icon:"🗡️",price:2.20},
-    {name:"Netherite Axes",icon:"🪓",price:2.30},{name:"Diamond Axes",icon:"🪓",price:2.10},
-    {name:"XP Bottles",icon:"🍶",price:1.80},{name:"Gapples Kit",icon:"🍎",price:1.20},
-    {name:"Fishing Rods",icon:"🎣",price:1.50},{name:"Bows",icon:"🏹",price:1.75},
-    {name:"Ender Pearls",icon:"🌑",price:1.60},{name:"PvP Kit 1",icon:"⚔️",price:1.90},
-    {name:"PvP Kit 2",icon:"⚔️",price:2.00},{name:"PvP Kit 3",icon:"⚔️",price:2.10}
+    {name:"Netherite Swords",image:"images/nswords.png",price:2.50},
+    {name:"Diamond Swords",image:"images/dswords.png",price:2.20},
+    {name:"Netherite Axes",image:"images/naxes.png",price:2.30},
+    {name:"Diamond Axes",image:"images/daxes.png",price:2.10},
+    {name:"XP Bottles",image:"images/xp.png",price:1.80},
+    {name:"Gapples Kit",image:"images/gaps.png",price:1.20},
+    {name:"Fishing Rods",image:"images/fishingrods.png",price:1.50},
+    {name:"Bows",image:"images/bows.png",price:1.75},
+    {name:"Ender Pearls",image:"images/pearls.png",price:1.60},
+    {name:"PvP Kit 1",image:"images/pvp1.png",price:1.90},
+    {name:"PvP Kit 2",image:"images/pvp2.png",price:2.00},
+    {name:"PvP Kit 3",image:"images/pvp3.png",price:2.10}
   ],
   illegal:[
-    {name:"Illegal Items",icon:"🚫",price:2.75},{name:"Music Discs",icon:"💿",price:2.10},
-    {name:"Armor Trims",icon:"✨",price:1.50},{name:"Shears",icon:"✂️",price:1.30}
+    {name:"Illegal Items",image:"images/illegal1.png",price:2.75},
+    {name:"Music Discs",image:"images/discs.png",price:2.10},
+    {name:"Armor Trims",image:"images/trims.png",price:1.50},
+    {name:"Shears",image:"images/shears.png",price:1.30}
   ],
   grief:[
-    {name:"Wither Skulls",icon:"💀",price:2.30},{name:"Flint & Steel",icon:"🔥",price:1.95},
-    {name:"TNT Grief Kit",icon:"💥",price:2.00},{name:"Diamond Grief Kit",icon:"💎",price:2.40}
+    {name:"Wither Skulls",image:"images/witherskulls.png",price:2.30},
+    {name:"Flint & Steel",image:"images/flintnsteel.png",price:1.95},
+    {name:"TNT Grief Kit",image:"images/tnt.png",price:2.00},
+    {name:"Diamond Grief Kit",image:"images/dgrief.png",price:2.40}
   ],
   blocks:[
-    {name:"Obsidian",icon:"⬛",price:1.10},{name:"Ender Chests",icon:"🟫",price:2.00}
+    {name:"Obsidian",image:"images/obsidan.png",price:1.10},
+    {name:"Ender Chests",image:"images/echests.png",price:2.00}
   ],
   tools:[
-    {name:"Netherite Helmets",icon:"🪖",price:2.50},{name:"Diamond Helmets",icon:"🪖",price:2.20},
-    {name:"Netherite Chestplates",icon:"🛡️",price:2.90},{name:"Diamond Chestplates",icon:"🛡️",price:2.70},
-    {name:"Netherite Leggings",icon:"👖",price:2.60},{name:"Diamond Leggings",icon:"👖",price:2.40},
-    {name:"Netherite Boots",icon:"👟",price:2.50},{name:"Diamond Boots",icon:"👟",price:2.30},
-    {name:"Netherite Pickaxes",icon:"⛏️",price:2.40},{name:"Diamond Pickaxes",icon:"⛏️",price:2.20},
-    {name:"Netherite Shovels",icon:"🪣",price:2.10}
+    {name:"Netherite Helmets",image:"images/nhelmets.png",price:2.50},
+    {name:"Diamond Helmets",image:"images/dhelmets.png",price:2.20},
+    {name:"Netherite Chestplates",image:"images/nchestplates.png",price:2.90},
+    {name:"Diamond Chestplates",image:"images/dchestplates.png",price:2.70},
+    {name:"Netherite Leggings",image:"images/npants.png",price:2.60},
+    {name:"Diamond Leggings",image:"images/dpants.png",price:2.40},
+    {name:"Netherite Boots",image:"images/nboots.png",price:2.50},
+    {name:"Diamond Boots",image:"images/dboots.png",price:2.30},
+    {name:"Netherite Pickaxes",image:"images/npickaxes.png",price:2.40},
+    {name:"Diamond Pickaxes",image:"images/dpickaxes.png",price:2.20},
+    {name:"Netherite Shovels",image:"images/nshovels.png",price:2.10}
   ],
   consumables:[
-    {name:"Enchanted Apples",icon:"🍎",price:2.10},{name:"XP Bottles",icon:"🍶",price:1.00}
+    {name:"Enchanted Apples",image:"images/gaps.png",price:2.10},
+    {name:"XP Bottles",image:"images/xp.png",price:1.00}
   ],
   misc:[
-    {name:"Random Items",icon:"🎲",price:1.75},{name:"Elytras",icon:"🪂",price:2.50},
-    {name:"Totems",icon:"🗿",price:2.20}
+    {name:"Random Items",image:"images/misc.png",price:1.75},
+    {name:"Elytras",image:"images/elytras.png",price:2.50},
+    {name:"Totems",image:"images/totems.png",price:2.20}
   ]
 };
 
@@ -540,7 +567,7 @@ function loadCategory(cat,el){
   categories[cat].forEach(i=>{
     const d=document.createElement('div');
     d.className='item-card';
-    d.innerHTML=`<div class="item-img-wrap">${i.icon}</div><div class="item-name">54x Shulkers<br>${i.name}</div><div class="item-price">$${i.price.toFixed(2)}</div><button class="add-btn" onclick="addItem('${i.name}',${i.price})">+ Add</button>`;
+    d.innerHTML=`<div class="item-img-wrap"><img src="${i.image}" alt="${i.name}" style="max-width:40px;max-height:40px;image-rendering:pixelated;"></div><div class="item-name">54x Shulkers<br>${i.name}</div><div class="item-price">$${i.price.toFixed(2)}</div><button class="add-btn" onclick="addItem('${i.name}',${i.price})">+ Add</button>`;
     box.appendChild(d);
   });
   // reattach cursor listeners to new cards
